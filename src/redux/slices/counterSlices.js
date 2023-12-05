@@ -8,6 +8,7 @@ export const increaseAmt = createAction("incByAmt/increment");
 const initialState = {
 	value: 0,
 };
+
 export const counterSlices = createReducer(initialState, (builder) => {
 	builder.addCase(increment, (state, action) => {
 		state.value++;
@@ -18,6 +19,6 @@ export const counterSlices = createReducer(initialState, (builder) => {
 	});
 
 	builder.addCase(increaseAmt, (state, action) => {
-		state.value = action.payload;
+		state.value += action.payload;
 	});
 });
